@@ -1,10 +1,16 @@
 #!/usr/bin/env node
+// vim: filetype=javascript sw=2 ts=2 sts=2
 
 (function() {
   "use strict";
 
+  function meta() {
+    var binPath = fs.realpathSync(process.argv[1]),
+        pkgPath = fs.realpathSync(binPath + "/../../package.json");
+    return JSON.parse(fs.readFileSync(pkgPath));
+  }
+
   function version() {
-    var pkg = JSON.parse(fs.readFileSync("package.json"));
     console.error("%s %s (%s)", pkg.name, pkg.version, pkg.homepage);
   }
 
@@ -74,13 +80,14 @@
   }
 
   var SUPPORTED_TYPES = ["json", "xml", "css", "sql"],
-      SUPPORTED_MIME_TYPES = require('./lib/mime-types');
+      SUPPORTED_MIME_TYPES = require('../lib/mime-types');
 
   var fs = require('fs'),
       util = require('util'),
       nomnom = require('nomnom'),
       pd = require('pretty-data').pd,
       mime = require('mime'),
+      pkg = meta(),
       opts, args;
 
   mime.define({
