@@ -1,0 +1,24 @@
+{
+  "author": "Kiyoshi '13k' Murata <13k@linhareta.net> (http://commita.com)",
+  "name": "pretty-data-cli",
+  "description": "A CLI to pretty-data package with file and stdin support",
+  "version": "0.1.0",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/13k/pretty-data-cli.git"
+  },
+  "main": "pretty-data-cli.js",
+  "bin": {
+    "pretty": "./cli.js"
+  },
+  "dependencies": {
+    "pretty-data": "~0.30.3",
+    "nomnom": "~1.5.1",
+    "mime": "~1.2.5"
+  },
+  "devDependencies": {},
+  "optionalDependencies": {},
+  "engines": {
+    "node": ">= 0.4.x"
+  }
+}
