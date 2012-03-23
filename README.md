@@ -23,5 +23,21 @@ options:
    -m, --minify           Minify instead of pretty print.
 ```
 
+## (\*nix) Examples
+
+* Page through the <s>in</s>human-readable GData API
+
+```
+curl -s "https://gdata.youtube.com/feeds/api/standardfeeds/top_rated" | pretty -t xml | less
+```
+PS: I think almost all GData APIs have a [prettyprint][pretty-print-param-url] parameter available
+
+* Read Twitter's global trends
+
+```
+curl -s "http://api.twitter.com/1/trends/1.json" | pretty -t json
+```
+
 [pretty-data-url]: https://github.com/vkiryukhin/pretty-data
 [mime-url]: https://github.com/bentomas/node-mime
+[pretty-print-param-url]: https://developers.google.com/youtube/2.0/developers_guide_protocol#prettyprintsp
