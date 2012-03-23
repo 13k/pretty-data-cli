@@ -2,7 +2,7 @@
   "author": "Kiyoshi '13k' Murata <13k@linhareta.net> (http://commita.com)",
   "name": "pretty-data-cli",
   "description": "A CLI to pretty-data package with file and stdin support",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "homepage": "https://github.com/13k/pretty-data-cli",
   "repository": {
     "type": "git",
