@@ -3,11 +3,9 @@
 (function() {
   "use strict";
 
-  function help() {
-    console.log("Usage: %s <type or file(s)>", process.argv[0]);
-    console.log("Examples:");
-    console.log([
-    ].join(util.format("\n  %s ", process.argv[0])));
+  function version() {
+    var pkg = JSON.parse(fs.readFileSync("package.json"));
+    console.error("%s %s (%s)", pkg.name, pkg.version, pkg.homepage);
   }
 
   function err() {
@@ -101,6 +99,11 @@
         flag: true,
         help: 'Minify instead of pretty print.'
       },
+      version: {
+        abbr: 'v',
+        flag: true,
+        help: 'Show version.'
+      },
       files: {
         position: 0,
         metavar: 'FILE(s)',
@@ -108,6 +111,11 @@
         help: 'Read from FILE(s). Optional.'
       }
     }).parse();
+
+  if (opts.version) {
+    version();
+    process.exit(0);
+  }
 
   if (opts.files) {
     if ((opts.files.length == 1) && (opts.files[0] == "-")) {

@@ -3,6 +3,7 @@
   "name": "pretty-data-cli",
   "description": "A CLI to pretty-data package with file and stdin support",
   "version": "0.1.0",
+  "homepage": "https://github.com/13k/pretty-data-cli",
   "repository": {
     "type": "git",
     "url": "git://github.com/13k/pretty-data-cli.git"

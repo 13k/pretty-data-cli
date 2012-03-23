@@ -21,11 +21,12 @@ files     Read from FILE(s). Optional.
 options:
    -t TYPE, --type TYPE   Data TYPE. If not present, will guess from file extension. Required if no FILE(s) given.
    -m, --minify           Minify instead of pretty print.
+   -v, --version          Show version.
 ```
 
 ## (\*nix) Examples
 
-* Page through the <s>in</s>human-readable GData API
+* Page through the *in*human-readable GData API
 
 ```
 curl -s "https://gdata.youtube.com/feeds/api/standardfeeds/top_rated" | pretty -t xml | less
